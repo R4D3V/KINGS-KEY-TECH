@@ -8,12 +8,6 @@ export default function Page() {
       icon="💻" sub="System Setup & Software"
       title="OS & Program Installation"
       description="Get your computer running at peak performance with a clean OS installation and all the software you need — configured perfectly from day one."
-      images={[
-        { src: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg", caption: "Windows Setup", label: "OS Install" },
-        { src: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg", caption: "Software Config", label: "Programs" },
-        { src: "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg", caption: "Driver Install", label: "Hardware" },
-        { src: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg", caption: "System Optimised", label: "Final Setup" },
-      ]}
       features={["Windows 10 / 11 Clean Installation","Ubuntu & Linux Setup","macOS Configuration","All Drivers Installation","Microsoft Office Suite","Antivirus & Security Software","Adobe Creative Suite","Custom Software Packages","BIOS / UEFI Configuration","Dual Boot Setup","Performance Optimization","Post-install Backup Setup"]}
       process={[
         { step: "01", title: "Assessment", desc: "We evaluate your device specs and requirements before any work begins." },

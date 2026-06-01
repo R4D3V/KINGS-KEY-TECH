@@ -10,6 +10,12 @@ const levels = [
   { num: "02", level: "Intermediate", desc: "Master MS Office, internet skills, and productivity tools.", duration: "3 weeks" },
   { num: "03", level: "Advanced", desc: "Deep dive into programming, networking, and advanced software.", duration: "6 weeks" },
 ];
+const images = [
+  { src: "https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg", caption: "Hands-On Training", label: "Practical" },
+  { src: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg", caption: "Group Sessions", label: "Class" },
+  { src: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg", caption: "One-on-One Tuition", label: "Private" },
+  { src: "https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg", caption: "Student Progress", label: "Results" },
+];
 
 export default function Page() {
   return (
@@ -17,7 +23,7 @@ export default function Page() {
       <div className="page-hero">
         <span className="hidden md:block font-[family-name:var(--font-bebas)] absolute right-0 top-0 leading-none select-none pointer-events-none text-black/[0.04]" style={{ fontSize: "180px" }}>LEARN</span>
         <p className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">
-          <Link href="/" className="no-underline" style={{ color: "var(--color-brand)" }}>Home</Link> /{" "}
+          <Link href="/" className="no-underline" style={{ color: "var(--color-brand)" }}>Home</Link> /&nbsp;
           <Link href="/services" className="no-underline" style={{ color: "var(--color-brand)" }}>Services</Link> / Computer Lessons
         </p>
         <div className="flex items-center gap-5 mb-4">
@@ -33,6 +39,7 @@ export default function Page() {
       <section className="bg-white page-section">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-14 lg:gap-20">
           <div className="space-y-14">
+
             {/* Levels */}
             <AnimatedSection>
               <h2 className="font-[family-name:var(--font-bebas)] text-3xl tracking-wide text-gray-900 mb-8">Training Levels</h2>
@@ -85,10 +92,43 @@ export default function Page() {
                 ))}
               </div>
             </AnimatedSection>
+
+            {/* Work Examples Gallery */}
+            <AnimatedSection delay={300}>
+              <h2 className="font-[family-name:var(--font-bebas)] text-3xl tracking-wide text-gray-900 mb-8">Work Examples</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
+                {images.map((img, i) => (
+                  <div key={img.src} className="relative overflow-hidden group cursor-default bg-gray-900">
+                    <img
+                      src={`${img.src}?auto=compress&cs=tinysrgb&w=600`}
+                      alt={img.caption}
+                      className="w-full h-48 lg:h-56 object-cover opacity-80 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <span
+                      className="absolute top-3 right-3 font-[family-name:var(--font-bebas)] text-white/10 group-hover:text-white/5 leading-none select-none transition-all duration-500"
+                      style={{ fontSize: "52px" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="absolute inset-0 flex flex-col justify-end p-4">
+                      <span className="inline-block self-start text-[9px] font-bold tracking-[0.2em] uppercase px-2 py-0.5 mb-2 border border-[var(--color-brand)] text-[var(--color-brand)] bg-black/40 backdrop-blur-sm">
+                        {img.label}
+                      </span>
+                      <h4 className="font-[family-name:var(--font-bebas)] text-lg tracking-wide text-white leading-tight mb-0 group-hover:mb-3 transition-all duration-500">
+                        {img.caption}
+                      </h4>
+                      <div className="w-0 group-hover:w-8 h-0.5 transition-all duration-500" style={{ background: "var(--color-brand)" }} />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" style={{ background: "var(--color-brand)" }} />
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
           </div>
 
           {/* Sidebar */}
-          <AnimatedSection delay={300}>
+          <AnimatedSection delay={350}>
             <div className="sticky top-24">
               <div className="border border-gray-200 overflow-hidden">
                 <div className="bg-gray-900 px-7 py-5">

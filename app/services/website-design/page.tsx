@@ -1,0 +1,25 @@
+import ServicePage from "@/components/ServicePage";
+
+export const metadata = { title: "Website Designing — Kings Key Tech" };
+
+export default function Page() {
+  return (
+    <ServicePage
+      icon="🌐" sub="Web Development"
+      title="Website Designing"
+      description="Your online presence matters. I design and build stunning, fast, and functional websites that represent your brand with excellence."
+      features={["Custom Website Design","Mobile-Responsive Layouts","Business / Portfolio Sites","E-commerce Stores","Landing Pages","SEO Foundation Setup","Google Analytics","Contact Forms","Fast Page Load Speed","Domain & Hosting Guidance","CMS (WordPress / Next.js)","Website Maintenance"]}
+      process={[
+        { step: "01", title: "Discovery", desc: "We discuss your goals, brand, target audience, and vision." },
+        { step: "02", title: "Design", desc: "Wireframes and mockups crafted to match your requirements." },
+        { step: "03", title: "Development", desc: "Clean, modern code built for speed and reliability." },
+        { step: "04", title: "Review", desc: "You review and request any adjustments or changes." },
+        { step: "05", title: "Launch", desc: "Your site goes live — fully tested and optimized." },
+      ]}
+      sidebarTitle="Start Your Project"
+      sidebarDesc="Tell me your vision and I'll bring it online."
+      waMessage="Hello Fahad, I need a Website Design service."
+      perks={["Custom designs only","Delivered in 3–7 days","Free revisions included","Mobile-first approach"]}
+    />
+  );
+}
